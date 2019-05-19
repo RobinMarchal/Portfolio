@@ -1,0 +1,714 @@
+/**************************
+    1. General
+***************************/
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Roboto";
+    background-color: #FFF;
+    color: #202020;
+}
+h1 {
+    font-family: "Sans-Pro", sans-serif;
+    font-size: 3.3em;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    word-spacing: .06em;
+}
+h2 {
+    font-family: "Sans-Pro", sans-serif;
+    font-size: 2.3em;
+}
+h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: "Sans-Pro", sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    word-spacing: 0.2em;
+}
+h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: "Sans-Pro", sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    word-spacing: 0.2em;
+}
+.img-grid img {
+    max-width: 100%;
+}
+.img-resize img {
+    width: 50% !important
+}
+.ftco-animate {
+    opacity: 0;
+    visibility: hidden;
+}
+a.waves-effect, a.waves-light {
+    display: inline-block !important;
+}
+.view, .view .mask, .waves-effect {
+    overflow: hidden;
+}
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn {
+    margin: 5px .375rem;
+    padding: .6rem 1.8rem;
+    font-size: .8rem;
+    color: #fff !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    white-space: normal;
+    word-wrap: break-word;
+    border-radius: 0rem;
+    -webkit-border-radius: 0rem;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+.btn:focus {
+    box-shadow: 0 0 0 0.1rem rgba(255, 193, 49, 0.589);
+    -webkit-box-shadow: 0 0 0 0.1rem rgba(255, 193, 49, 0.589);
+}
+.btn-fonce {
+    background-color: #ffa100;
+    color: #FFF;
+}
+.btn-fonce:hover {
+    background-color: #fff;
+    color: #ffa100 !important;
+}
+.btn-danger {
+    border: hidden  !important;
+}
+.btn-danger:hover {
+    background-color: #fff;
+    color: #dc3545 !important;
+}
+.btn-small {
+    padding: .4rem 1.3rem;
+    font-size: .6rem;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgba(255, 193, 49, 0.589);
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(255, 193, 49, 0.589);
+    -webkit-box-shadow: 0 0 0 0.1rem rgba(255, 193, 49, 0.589);
+}
+.form-control {
+    font-size: 16px;
+    border-radius: 0;
+}
+/**************************
+    2. Navigation
+***************************/
+nav {
+    background-color: rgb(29, 29, 29);
+    font-family: "Sans-Pro", sans-serif;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+nav .brand-logo:hover {
+    color : rgba(255,255,255,.7);
+}
+nav ul a {
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+.navbar {
+    padding: 0.5rem 3rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFF;
+}
+.navbar-dark .navbar-nav .active > .nav-link {
+    color: #ffa100;
+}
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #ffa100;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color : #ffa100;
+}
+.navbar-dark .navbar-nav .nav-link::after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 2px;
+    background:#ffa100;
+    transition: width .3s;
+}
+.navbar-dark .navbar-nav .nav-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+.navbar-dark .navbar-toggler {
+    color: rgb(255, 255, 255);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+/* #mobile-links .mobile-nav-logo{
+    background-color: #202020;
+}
+#mobile-links .brand-logo{
+    margin-left: 30px;
+    padding-top: 10px;
+    font-family: "Sans-Pro", sans-serif;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    letter-spacing: 4px;
+} */
+/**************************
+    3. Header
+***************************/
+.ftco-home h1 {
+    display: none;
+}
+.ftco-home p {
+    display: none;
+    color: #FFF;
+    font-family: "Sans-Pro", sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+.hero-warp {
+    position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #222;
+    height: 100vh;
+}
+.hero-warp h1 {
+    color: #FFF;
+} 
+.hero-warp .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .315;
+    height: 100vh;
+    background: #000;
+}
+.form-hero-warp {
+    transition: .5s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/formation.jpg');
+}
+.form-hero-warp:hover {
+    transition: .8s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/formation-color.jpg');
+}
+.lab-hero-warp {
+    transition: .5s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/laboratoire.jpg');
+}
+.lab-hero-warp:hover {
+    transition: .8s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/laboratoire-color.jpg');
+}
+.rea-hero-warp {
+    transition: .5s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/realisations.jpg');
+}
+.rea-hero-warp:hover {
+    transition: .8s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/realisations-color.jpg');
+}
+.comp-hero-warp {
+    transition: .5s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/competences.jpg');
+}
+.comp-hero-warp:hover {
+    transition: .8s;
+    background-image: url('http://localhost/portfolio/public/asset/img/header/competences-color.jpg');
+}
+.hero-warp-2 {
+    position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #222;
+    height: 50vh;
+}
+.hero-warp-2 h1 {
+    color: #ffa100;
+}
+.hero-warp-2 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .315;
+    height: 50vh;
+    background: #000;
+}
+.hero-warp .title {
+    margin-top: 25%;
+}
+.hero-warp-2 .title {
+    margin-top: 15%;
+}
+.down {
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+.down span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid #ffa100;
+    border-right: 2px solid #ffa100;
+    transform: rotate(45deg);
+    margin:     -10px;
+    animation: down 2s infinite;
+}
+.down span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+.down span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+@keyframes down {
+    0% {
+        opacity:0;
+        transform: rotate(45deg) translate(-20px, -20px); 
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+/**************************
+    4. Presentation
+***************************/
+.parallax {
+    min-height: 30vh; 
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax div {
+    min-height: 30vh; 
+}
+.parallax a {
+    margin-top: 11vh;
+}
+.phone {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+}
+  .phone-marchal{
+    position: absolute;
+    width: 330px;
+    height: 627px; 
+    background: #0a0a0a;
+    border-radius: 25px;
+    transform:rotate(-25deg) skew(25deg) scale(.5);
+    box-shadow: -12px 7px 1px 5px #0a0a0a;
+    -webkit-box-shadow: -12px 7px 1px 5px #0a0a0a;
+  }
+  .screen {
+    position: absolute;
+    top: 20px;
+    bottom: 45px;
+    right: 8px;
+    left: 8px;
+    background: #ffffff00;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .screen:before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:-50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-15deg);
+  }
+.box {
+    position: relative;
+    width: 314px;
+    height: 585px;
+    background: #00000015;
+    transform:rotate(-25deg) skew(25deg) scale(.5);
+    }
+    .step {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(http://localhost/portfolio/public/asset/img/xamarin.png);
+      background-size: cover;
+      border-radius: 10px;
+      transition: 0.5s
+    }
+    .step:nth-child(2),.step:nth-child(1) {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(http://localhost/portfolio/public/asset/img/xamarin-draw.png);
+      background-size: cover;
+      transition: 0.5s
+    }
+    .step:nth-child(3) {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(http://localhost/portfolio/public/asset/img/xamarin-BW.png);
+      background-size: cover;
+      transition: 0.5s
+    }
+    .box:hover .step:nth-child(4) {
+      transform: translate(160px,-160px);
+      opacity: 1;
+    }
+    .box:hover .step:nth-child(3) {
+      transform: translate(120px,-120px);
+      opacity: .8;
+    }
+    .box:hover .step:nth-child(2) {
+      transform: translate(80px,-80px);
+      opacity: .6;
+    }
+    .box:hover .step:nth-child(1) {
+      transform: translate(40px,-40px);
+      opacity: .4;
+    }
+
+/**************************
+    4. Formation
+***************************/
+.resume .formation h3 {
+    font-size: 1.25rem;
+    font-family: "Roboto";
+    text-transform: none;
+    letter-spacing: 0;
+    word-spacing: 0;
+}
+.resume .formation {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 30px;
+  }
+  .resume .column-left {
+    width: 95%;
+    padding-top: 20px;
+    padding-left: 50px;
+    border-left: 2px solid rgb(209, 209, 209);
+  }
+  .resume .item {
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .resume .column-left .item:after {
+    right: calc(100% + 48px);
+  }
+
+  .resume .item:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -54px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #202020;
+}
+/**************************
+    5. Compétences
+***************************/
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: .8rem;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: #e9ecef;
+    border-radius: .15rem;
+}
+.progress-bar {
+    background-color: #ffa200cc;
+}
+.framework-info h4{
+    font-family: "Sans-Pro", sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    word-spacing: 0.2em;
+}
+.framework-info hr {
+    margin-top: 0;
+    margin-bottom: .7rem;
+    width: 30px;
+    height: 2px;
+    background: #1c1c1c;
+    align-content: flex-start;
+}
+/**************************
+    6. Réalisations
+***************************/
+.serv-item:hover #cadre {
+    animation-play-state: running;
+    fill: #6f6f72;
+}
+.serv-item a {
+    color: #000;
+}
+.serv-item a:hover {
+    text-decoration: none;
+}
+.serv-item img {
+    width:50px;
+    float: left;
+}
+.serv-info h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: "Sans-Pro", sans-serif;
+
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    word-spacing: 0.2em;
+}
+.serv-info hr {
+    margin-top: 0;
+    width: 30px;
+    height: 2px;
+    background: #1c1c1c;
+    align-content: flex-start;
+}
+.serv-body span{
+    text-transform: uppercase;
+    color: #ffa100;
+}
+.serv-body span:hover {
+    color: #202020;
+}
+.ml-icon {
+    margin-left: 70px;
+}
+
+svg:hover #cadre {
+    animation-play-state: running;
+    fill: #6f6f72;
+}
+#cadre {
+    animation-name: cadre;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+#article h4 {
+    font-weight: bold;
+}
+#article img {
+    width: 100%;
+}
+/**************************
+    7. Laboratoire
+***************************/
+.card-box {
+    display: block;
+    width: 100%;
+    padding: 1.4rem;
+    overflow: hidden;
+    background-color: #FFF;
+    text-align: center;
+    position: relative;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.card-box span {
+    color: #ffa100;
+}
+.card-box h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: "Sans-Pro", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    word-spacing: 0.2em;
+}
+.card-overlay{
+    width: 100%;
+    background-color: #0a0a0a9c;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.card-overlay a {
+   margin-top: 40%
+}
+.slide-down-delay .card-overlay{
+    /* line-height: 200px; */
+    color: #fff;
+    transform: translateY(-100%);
+    -webkit-transition: transform 0.5s ease-out;
+    -o-transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+}
+.slide-down-delay .card-box:hover .card-overlay{
+    transform: translateY(0);
+}
+.slide-down-delay .card-box:hover .card-overlay i{
+    transform: translateY(0);
+    opacity: 1;
+}
+/**************************
+    8. Footer
+***************************/
+.ftco-bg-dark{
+    color: #FFF;
+    background-color: #202020;
+}
+footer span{
+    vertical-align: bottom;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    word-spacing: .2rem;
+}
+footer a {
+    vertical-align: bottom;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    word-spacing: .4rem;
+}
+footer a:hover {
+    color: #ffa100;
+    text-decoration: none;
+}
+/**************************
+    9. Admin
+***************************/
+.security .admin {
+    background-color: #2e2e2e;
+    color: #FFF;
+    border-radius: .1rem;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.table thead th {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    vertical-align: middle !important;
+}
+.table tbody td {
+    vertical-align: middle !important;
+}
+.table tbody td h2 {
+    width: 70px;
+    padding-bottom: 3px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border-bottom: solid;
+}
+.badge {
+    margin: 5px .375rem;
+    padding: .9em 1.3em;
+    border-radius: 0rem;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+/**************************
+    10. COOKIES
+***************************/
+
+/* Le bandeau cookie */
+.cookie-banner {
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    background-color: #cccccc;
+    top: 0;
+    width: 100%;
+}
+.cookie-banner:active {
+    display: block;
+}
+
+/* Overlay de la boite de dialogue */
+.cookie-inform-and-ask {
+    background-color: #ff000054;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.cookie-inform-and-ask:active {
+    display: block;
+}
+
+/* La vraie boîte de dialogue */
+.cookie-dialog {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}

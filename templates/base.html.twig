@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <link rel="icon" href="{{ asset('img/favicon/favicon.ico') }}">
+        <title>{% block title %}{% endblock %}</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>        
+        <header id="header" >
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav justify-content-end">
+                        <li class="nav-item {% if current_menu is defined and current_menu == 'home' %}active{% endif %}">
+                            <a class="nav-link link" href="{{ path('index')}}">Présentation</a>
+                        </li>
+                        <li class="nav-item {% if current_menu is defined and current_menu == 'formation' %}active{% endif %}">
+                            <a class="nav-link link" href="{{ path('formation.index')}}">Formations</a>
+                        </li>
+                        <li class="nav-item {% if current_menu is defined and current_menu == 'competence' %}active{% endif %}">
+                            <a class="nav-link link" href="{{ path('competence.index')}}">Compétences</a>
+                        </li>
+                        <li class="nav-item {% if current_menu is defined and current_menu == 'realization' %}active{% endif %}">
+                            <a class="nav-link link" href="{{ path('realization.index')}}">Réalisations</a>
+                        </li>
+                        <li class="nav-item {% if current_menu is defined and current_menu == 'article' %}active{% endif %}">
+                            <a class="nav-link link" href="{{ path('article.index')}}">Labo'</a>
+                        </li>
+                        {% if app.user %}
+                        <li class="nav-item">
+                            <a href="{{ path('admin.index') }}" class="nav-link link">Dashboard</a>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a href="{{ path('logout')}}" class="nav-link link">Logout</a> 
+                        </li>
+                        {% endif %} 
+                    </ul>
+                        
+                </div>
+            </nav>
+            <script>
+                function startGoogleAnalytics() {
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                    ga('create', 'UA-127488021-1', 'auto');
+                    ga('send', 'pageview');
+                }
+                // window.dataLayer = window.dataLayer || [];
+                // function gtag(){dataLayer.push(arguments);}
+                // gtag('js', new Date());
+                // gtag('config', 'UA-127488021-1');
+
+                (function(h,e,a,t,m,p) {
+                    m=e.createElement(a);m.async=!0;m.src=t;
+                    p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
+                })
+                (window,document,'script','https://u.heatmap.it/log.js');
+            </script>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Bandeau cookie comportant le message et le bouton pour éventuellement s'opposer -->
+                <div id="cookie-banner" class="cookie-banner p-3">
+                    Ce site utilise Google Analytics. En continuant à naviguer, vous nous autorisez à déposer un cookie à des fins de mesure d'audience.
+                    <a id="cookie-more-button" name="cookie-more" class="btn btn-small btn-fonce waves-effect waves-light">En savoir plus ou s'opposer</a>
+                </div>
+                    
+                <!-- Boite de dialogue comportant une description détaillée et deux boutons (confirmation, rejet) -->
+                <div id="cookie-inform-and-ask" class="cookie-inform-and-ask">
+                    <div class="cookie-dialog">
+                        <h1>Les cookies Google Analytics</h1>
+                        <p>Ce site utilise des cookies de Google Analytics. Ces cookies nous aident à identifier le contenu qui vous intéresse le plus ainsi qu'à repérer certains dysfonctionnements. Vos données de navigations sur ce site sont envoyées à Google Inc.</p>
+                        <div>
+                        <button id="ga-cancel-button" name="ga-cancel">S'opposer</button>
+                        <button id="ga-confirm-button" name="ga-confirm">Accepter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block body %}
+
+        
+        
+        
+        
+        
+        {% endblock %}
+
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
+            <div class="container py-2 ">
+                <div class="row text-center "> 
+                    <div class="img-resize col-sm-4 offset-sm-4">
+                        <img src="{{asset('img/logo.svg')}}" alt="">
+                    </div>
+                </div>
+                <div class="row text-center "> 
+                    <div class="col-sm-6 text-left">
+                        <span>© 2019 Marchal Robin</span>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a href="{{ path('mentionlegales')}}" />Mentions légales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        {% block javascripts %}
+        
+        
+        {% endblock %}
+
+        <!-- JS -->
+        <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ asset('js/scrollax.min.js') }}"></script>
+        <script src="{{ asset('js/cookies.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
+    </body>
+</html>

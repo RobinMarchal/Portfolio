@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block title 'Formations | Marchal Robin'%}
+{% block description 'Portfolio de Robin Marchal, futur Développeur Web Front-end / Back-end. Création de sites web et développement Web PhP, MySQL, JavaScript, HTML, CSS ainsi que développement mobile Android / Xamarin.' %}
+
+{% block body %}
+<section class="hero-warp form-hero-warp">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters align-items-center justify-content-center">
+            <div class="col-sm-10 title ftco-animate text-center">
+                <h1>Formations</h1>
+            </div>
+            <div class="down" id="box">
+                <a href="#box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="resume pt-5">
+
+    {% for block in blocks if block.category == format %}
+
+        {% if block.type == content %}
+
+        {# {% set counter = ( counter | default(0) ) + 1 %} #}
+
+            {# {% if counter == 1 %} #}
+                <div class="container py-2">
+            {# {% endif %} #}
+
+                    <div class="row ftco-animate py-2">
+                        {{ block.contents | raw }}
+                    </div>
+
+            {# {% if counter == block | last %} #}
+                </div>
+            {# {% endif %} #}
+
+        {% endif %}
+
+        {% if block.type == parallax %}
+            <div class="parallax" style="background-image: url('{{ block.contents | raw }}');"></div>
+        {% endif %}
+    
+    {% endfor %}
+
+    <div class="container">
+        <div class="row formation py-3">
+            <div class="mx-md-5 col-md-8">
+                <div class="column-left">
+
+                    {% for formation in formations %}
+                        {% if formation.category == format %}
+
+                            <div class="item ftco-animate">
+                                <h3><span>{{ formation.beginDate | date('Y') }} {% if formation.endDate != "" %} - {{ formation.endDate | date('Y') }}{% endif %} </span>&nbsp;{{ formation.name }}</h3>
+                                {{ formation.description | raw }}
+                            </div>
+                        
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</section> 
+  
+{% endblock body %}

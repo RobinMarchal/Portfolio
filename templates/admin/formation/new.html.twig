@@ -1,0 +1,11 @@
+{% extends 'admin/base.html.twig' %}
+{% block title 'Créer une Formation | Gérer mes Formations'%}
+
+{% block body %}
+
+<div class="container">
+    <h2>Créer une Formation</h2>
+    {{ include ('admin/formation/_form.html.twig', {form: form} )}}
+</div>
+  
+{% endblock body %}

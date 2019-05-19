@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title realization.title %}
+{% block description realization.metadescription %}
+
+{% block body %}
+<section class="hero-warp-2" style="background-image: url('http://localhost/monsite/public/asset/img/header/competences.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters align-items-center justify-content-center">
+            <div class="col-sm-10 title ftco-animate text-center">
+                <h1>{{realization.title}}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="article" class="">
+    <div class="container py-5">
+        <div class="row py-3 ftco-animate">
+            <div class="col-md-10">
+                <h2>{{realization.title}}</h2>
+                <span>Réalisé-le :&nbsp;{{realization.date | date('m - Y') }}</span>
+                <p>{% for tag in realization.tags %}<span class="badge badge-dark">{{ tag }}</span>{% endfor %}</p>
+            </div>
+        </div>
+        {{realization.contents | raw }}
+    </div>
+</section> 
+  
+{% endblock body %}

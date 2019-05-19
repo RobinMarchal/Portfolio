@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block title 'Compétences | Marchal Robin'%}
+{% block description 'Portfolio de Robin Marchal, futur Développeur Web Front-end / Back-end. Création de sites web et développement Web PhP, MySQL, JavaScript, HTML, CSS ainsi que développement mobile Android / Xamarin.' %}
+
+{% block body %}
+<section class="hero-warp comp-hero-warp">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters align-items-center justify-content-center">
+            <div class="col-sm-10 title ftco-animate text-center">
+                <h1>Compétences</h1>
+            </div>
+            <div class="down" id="box">
+                <a href="#box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-5">
+
+    {% for block in blocks if block.type == parallax %}
+    
+        {% if block.category == comp %}
+
+            <div class="parallax" style="background-image: url('{{ block.contents | raw }}');"></div>
+            
+        {% endif %}
+    {% endfor %}
+
+    {% for block in blocks if block.type == grid3 %}
+        {% if block.category == comp %}
+
+        {% set counter = ( counter | default(0) ) + 1 %}
+
+            {% if counter == 1 %}
+            <div class="container">
+                    <div class="row ">
+            {% endif %}
+
+                        <div class="col-md-4 ftco-animate">
+                            <div class="serv-item py-3">
+                                {{ block.contents | raw }}
+                            </div>
+                        </div>
+            {% if counter == block | last  %}
+                    </div>
+                </div>
+            {% endif %}
+
+        {% endif %}
+    {% endfor %}
+
+    {% for block in blocks if block.type == content %}
+        {% if block.category == comp %}
+        
+        {% set counter = ( counter | default(0) ) + 1 %}
+
+            {% if counter == 1 %}
+                <div class="container py-2">
+            {% endif %}
+
+                    <div class="row ftco-animate py-2">
+                        {{ block.contents | raw }}
+                    </div>
+
+            {% if counter == block | last %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% endif %}
+    {% endfor %}
+                
+</section> 
+  
+{% endblock body %}

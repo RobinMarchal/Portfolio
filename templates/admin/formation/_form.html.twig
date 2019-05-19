@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-6">
+        {{ form_row(form.name) }}
+        {{ form_row(form.beginDate) }}
+        {{ form_row(form.endDate) }}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        {{ form_row(form.description) }}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-2">
+        <span>En Ligne</span>
+    </div>
+    <div class="col-md-10">
+        {{ form_row(form.online) }}
+    </div>
+</div>
+    {{ form_widget(form) }}
+    <button class="btn btn-fonce waves-effect waves-light">{{ button|default('Enregistrer')}}</button>
+
+{{ form_end(form) }}

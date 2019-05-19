@@ -1,0 +1,11 @@
+{% extends 'admin/base.html.twig' %}
+{% block title 'Modifier un Tag | Gérer les Tags'%}
+
+{% block body %}
+
+<div class="container">
+    <h2>Modifier un Tag</h2>
+    {{ include ('admin/tags/_form.html.twig', {form: form} )}}
+</div>
+  
+{% endblock body %}

@@ -1,0 +1,65 @@
+{% extends 'admin/base.html.twig' %}
+{% block title 'Dashboard | Articles'%}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-sm-8">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success my-2">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm-4 text-right">
+                <a href="{{ path('admin.article.new')}}" class="btn btn-small btn-fonce waves-effect waves-light">Nouvel article</a>
+            </div>
+        </div>
+        <div class="row no-gutter">
+            <div class="col-md-12 table-responsive">
+                <table class="table text-center table-stripped my-4">
+                    <thead class="">
+                        <tr>
+                            <th>Articles</th>
+                            <th>Créé-le</th>
+                            <th>Ecrit par</th>
+                            <th>Publication</th>
+                            <th>Tags</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for article in articles %}
+                        <tr>
+                            <td>{{ article.title }}</td>
+                            <td>{{ article.createdat | date('j / m / Y') }}</td>
+                            <td>{{ article.writer }}</td>
+                            <td>
+                                <span class="badge {% if article.online == true %} badge-success {% else %} badge-danger {% endif %}">Publié</span>
+                            </td>
+                            <td>{% for tag in article.tags %}
+                                    &nbsp;{{ tag }},
+                                {% endfor %}
+                            </td>
+                            <td>
+                                <a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn btn-fonce btn-xs waves-effect waves-light">Editer</a>
+                                <form method="POST" action="{{ path('admin.article.delete', {id: article.id}) }}" style="display:inline-block;" onsubmit="return confirm('Êtes-vous vraiment sûr de vouloir supprimer cet article ?')">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
+                                    <button class="btn btn-danger btn-xs waves-effect waves-light">Supprimer</button>
+                                </form>
+                                
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+  
+{% endblock body %}

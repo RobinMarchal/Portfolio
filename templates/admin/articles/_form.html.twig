@@ -1,0 +1,33 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-6">
+        {{ form_row(form.title) }}
+        {{ form_row(form.metadescription) }}
+        {{ form_row(form.tags) }}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        {{ form_row(form.description) }}
+    </div>
+    <div class="col-md-12">
+        {{ form_row(form.contents) }}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-2">
+        <span>En Ligne</span>
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.online) }}
+    </div>
+    <div class="col-md-7">
+        {{ form_row(form.writer) }}
+    </div>
+</div>
+    {{ form_rest(form) }}
+    <button class="btn btn-fonce waves-effect waves-light">{{ button|default('Enregistrer')}}</button>
+
+{{ form_end(form) }}

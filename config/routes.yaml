@@ -1,0 +1,153 @@
+index:
+   path: /
+   controller: App\Controller\HomeController::index
+formation.index:
+   path: /formation
+   controller: App\Controller\HomeController::formation
+competence.index:
+   path: /competences
+   controller: App\Controller\HomeController::competence
+realization.index:
+   path: /realisations
+   controller: App\Controller\HomeController::realization
+realization.show:
+  path: /realisations/{slug}/{id}
+  controller: App\Controller\HomeController::realizationShow
+article.index:
+   path: /laboratoire
+   controller: App\Controller\HomeController::article
+article.show:
+   path: /laboratoire/{slug}/{id}
+   controller: App\Controller\HomeController::articleShow
+mentionlegales:
+   path: /mentions-legales
+   controller: App\Controller\HomeController::legalnotice
+
+   
+login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+logout:
+  path: /logout
+
+
+admin.index:
+   path: /admin/index
+   controller: App\Controller\Admin\AdminController::index
+
+
+admin.block.index:
+   path: /admin/block
+   controller: App\Controller\Admin\BlockController::index
+admin.block.new:
+   path: /admin/block/create
+   controller: App\Controller\Admin\BlockController::new
+admin.block.edit:
+   path: /admin/block/{id}
+   controller: App\Controller\Admin\BlockController::edit
+   methods: GET|POST
+admin.block.delete:
+   path: /admin/block/{id}
+   controller: App\Controller\Admin\BlockController::delete
+   methods: DELETE
+
+admin.category.index:
+   path: /admin/category
+   controller: App\Controller\Admin\CategoryController::index
+admin.category.new:
+   path: /admin/category/create
+   controller: App\Controller\Admin\CategoryController::new
+admin.category.edit:
+   path: /admin/category/{id}
+   controller: App\Controller\Admin\CategoryController::edit
+   methods: GET|POST
+admin.category.delete:
+   path: /admin/category/{id}
+   controller: App\Controller\Admin\CategoryController::delete
+   methods: DELETE
+
+admin.formation.index:
+   path: /admin/formation
+   controller: App\Controller\Admin\FormationController::index
+admin.formation.new:
+   path: /admin/formation/create
+   controller: App\Controller\Admin\FormationController::new
+admin.formation.edit:
+   path: /admin/formation/{id}
+   controller: App\Controller\Admin\FormationController::edit
+   methods: GET|POST
+admin.formation.delete:
+   path: /admin/formation/{id}
+   controller: App\Controller\Admin\FormationController::delete
+   methods: DELETE
+
+admin.type.index:
+   path: /admin/type
+   controller: App\Controller\Admin\TypeController::index
+admin.type.new:
+   path: /admin/type/create
+   controller: App\Controller\Admin\TypeController::new
+admin.type.edit:
+   path: /admin/type/{id}
+   controller: App\Controller\Admin\TypeController::edit
+   methods: GET|POST
+admin.type.delete:
+   path: /admin/type/{id}
+   controller: App\Controller\Admin\TypeController::delete
+   methods: DELETE
+
+admin.tag.index:
+   path: /admin/tag
+   controller: App\Controller\Admin\TagController::index
+admin.tag.new:
+   path: /admin/tag/create
+   controller: App\Controller\Admin\TagController::new
+admin.tag.edit:
+   path: /admin/tag/{id}
+   controller: App\Controller\Admin\TagController::edit
+   methods: GET|POST
+admin.tag.delete:
+   path: /admin/tag/{id}
+   controller: App\Controller\Admin\TagController::delete
+   methods: DELETE
+
+admin.realization.index:
+   path: /admin/realization
+   controller: App\Controller\Admin\RealizationController::index
+admin.realization.new:
+   path: /admin/realization/create
+   controller: App\Controller\Admin\RealizationController::new
+admin.realization.edit:
+   path: /admin/realization/{id}
+   controller: App\Controller\Admin\RealizationController::edit
+   methods: GET|POST
+admin.realization.delete:
+   path: /admin/realization/{id}
+   controller: App\Controller\Admin\RealizationController::delete
+   methods: DELETE
+
+admin.article.index:
+   path: /admin/article
+   controller: App\Controller\Admin\ArticleController::index
+admin.article.new:
+   path: /admin/article/create
+   controller: App\Controller\Admin\ArticleController::new
+admin.article.edit:
+   path: /admin/article/{id}
+   controller: App\Controller\Admin\ArticleController::edit
+   methods: GET|POST
+admin.article.delete:
+   path: /admin/article/{id}
+   controller: App\Controller\Admin\ArticleController::delete
+   methods: DELETE
+
+admin.user.index:
+   path: /admin/user
+   controller: App\Controller\Admin\UserController::index
+admin.user.new:
+   path: /admin/user/create
+   controller: App\Controller\Admin\UserController::new
+admin.user.delete:
+   path: /admin/user/{id}
+   controller: App\Controller\Admin\UserController::delete
+   methods: DELETE

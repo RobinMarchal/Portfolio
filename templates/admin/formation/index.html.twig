@@ -1,0 +1,60 @@
+{% extends 'admin/base.html.twig' %}
+{% block title 'Dashboard | Formation'%}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-sm-9">
+
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success my-2">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                
+            </div>
+            <div class="col-sm-3 text-right">
+                <a href="{{ path('admin.formation.new')}}" class="btn btn-small btn-fonce waves-effect waves-light">Nouvelle formation</a>
+            </div>
+        </div>
+        <div class="row no-gutter">
+            <div class="col-md-12 table-responsive">
+                <table class="table text-center table-stripped my-4">
+                    <thead class="">
+                        <tr>
+                            <th>Formation</th>
+                            <th>Catégorie</th>
+                            <th>Date</th>
+                            <th>Publication</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                            {% for formation in formations %}
+                        <tr>
+                            <td>{{ formation.name}}</td>
+                            <td>{{ formation.category}}</td>
+                            <td>{{ formation.beginDate | date('Y')}}</td>
+                            <td>
+                                <span class="badge {% if formation.online == true %} badge-success {% else %} badge-danger {% endif %}">Publié</span>
+                            </td>
+                            <td>
+                                <a href="{{ path('admin.formation.edit', {id: formation.id}) }}" class="btn btn-fonce btn-xs waves-effect waves-light">Editer</a>
+                                <form method="POST" action="{{ path('admin.formation.delete', {id: formation.id}) }}" style="display:inline-block;" onsubmit="return confirm('Êtes-vous vraiment sûr de vouloir supprimer cette formation ?')">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ formation.id) }}">
+                                    <button class="btn btn-danger btn-xs waves-effect waves-light">Supprimer</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  
+{% endblock body %}

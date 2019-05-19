@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block title 'Laboratoire | Marchal Robin'%}
+{% block description 'Portfolio de Robin Marchal, futur Développeur Web Front-end / Back-end. Création de sites web et développement Web PhP, MySQL, JavaScript, HTML, CSS ainsi que développement mobile Android / Xamarin.' %}
+
+{% block body %}
+<section class="hero-warp lab-hero-warp">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters align-items-center justify-content-center">
+            <div class="col-sm-10 title ftco-animate text-center">
+                <h1>Labo'</h1>
+            </div>
+            <div class="down" id="box">
+                <a href="#box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-5">
+
+    <div class="container">
+        <div class="row">
+
+        {% for article in articles %}
+
+            <div class="col-md-4 text-center ftco-animate my-4">
+                <div class="slide-down-delay">
+                    <div class="card-box">
+                        <div class="original">
+                            <h4 class="card-title">{{ article.title }}</h4>
+                            <span>{{ article.createdAt | date("j - m - Y")}}</span>
+                            <p class="card-text">{{ article.description | raw  }}</p>
+                        </div>
+                        <div class="card-overlay">
+                            <a href="{{ path('article.show', {id: article.id, slug: article.slug}) }}" class="btn btn-fonce btn-small waves-effect waves-light">En savoir plus</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} 
+
+        </div>
+    </div>
+    
+</section> 
+  
+{% endblock body %}

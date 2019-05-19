@@ -1,0 +1,56 @@
+{% extends 'admin/base.html.twig' %}
+{% block title 'Dashboard | Utilisateurs'%}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-sm-8">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success my-2">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm-4 text-right">
+                <a href="{{ path('admin.user.new')}}" class="btn btn-small btn-fonce waves-effect waves-light">Nouvel Utilisateur</a>
+            </div>
+        </div>
+        <div class="row no-gutter">
+            <div class="col-md-12 table-responsive">
+                <table class="table text-center table-stripped my-4">
+                    <thead class="">
+                        <tr>
+                            <th>Utilisateurs</th>
+                            <th>Roles</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{% for unrole in user.roles %}
+                                    {{unrole}}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                <form method="POST" action="{{ path('admin.user.delete', {id: user.id}) }}" style="display:inline-block;" onsubmit="return confirm('Êtes-vous vraiment sûr de vouloir supprimer cet utilisateur ?')">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                    <button class="btn btn-danger btn-xs waves-effect waves-light">Supprimer</button>
+                                </form>
+                                
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+  
+{% endblock body %}

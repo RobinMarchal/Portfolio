@@ -1,0 +1,202 @@
+@media (max-width: 991px){
+    .navbar-dark .navbar-nav .nav-link::after{
+        display: none;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    h4 {
+        font-size: 1.2em;
+    }
+    .navbar {
+        padding-left: 20px;
+    }
+    .hero-warp .title {
+        margin-top: 50%;
+    }
+    .hero-warp-2 .title {
+        margin-top: 25%;
+    }
+    .phone-box {
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+    .phone {
+        margin: 0 0;
+    }
+}
+@media (max-width: 768px){
+    h1 {
+        font-size: 2.3em;
+    }
+    h2 {
+        font-size: 1.7em;
+    }
+    h3 {
+        font-size: 1.3em;
+    }
+    h4 {
+        font-size: 1.1em;
+    }
+    .ftco-footer-widget img {
+        width: 50%;
+    }
+    .ftco-home h1 {
+        display: initial;
+    }
+    .ftco-home p {
+        display: initial;
+    }
+    .phone {
+        display: none;
+    }
+}
+@media (max-width: 575px) {
+    
+}
+@media (max-width: 495px) {
+    .hero-warp .title {
+        margin-top: 73%;
+    }
+    .hero-warp-2 .title {
+        margin-top: 35%;
+    }
+}
+@media (max-width: 417px){
+    .phone {
+        display: none;
+    }
+}
+@media (max-width: 380px) {
+    h1 {
+        font-size: 1.9em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    .ftco-footer-widget img {
+        width: 60%;
+    }
+    .hero-warp-2 .title {
+        margin-top: 45%;
+    }
+}
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+
+
+
+
+@media only screen and (min-width: 319px) and (max-width: 374px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 375px) and (max-width: 424px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width: 450px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 449px) and (max-width: 550px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 549px) and (max-width: 650px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 649px) and (max-width: 750px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 749px) and (max-width: 850px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 849px) and (max-width: 950px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 949px) and (max-width: 1050px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1049px) and (max-width: 1150px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1149px) and (max-width: 1250px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1249px) and (max-width: 1350px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1349px) and (max-width: 1500px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1501px) and (max-width: 1600px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1601px) and (max-width: 1700px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1701px) and (max-width: 1800px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 1801px) and (max-width: 2000px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 2001px) and (max-width: 2200px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 2201px) and (max-width: 2400px){
+    .hero-warp {
+        background-position: center center;
+    }
+}
+@media only screen and (min-width: 2401px) and (max-width: 2600px){
+    .hero-warp {
+        background-position: center center;
+    }
+}

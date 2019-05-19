@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title 'Connexion | Marchal Robin'%}
+{% block description 'Portfolio de Robin Marchal, futur Développeur Web Front-end / Back-end. Création de sites web et développement Web PhP, MySQL, JavaScript, HTML, CSS ainsi que développement mobile Android / Xamarin.' %}
+
+{% block body %}
+<section class="security" style="height:100vh">
+    <div class="container mt-5 py-5">
+        <div class="row py-5">
+            <div class="col-md-4 admin p-3 offset-md-4">
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error.messageKey | trans(error.messagedata, 'security') }}
+                    </div>
+                {% endif %}
+                <form action="{{ path('login') }}" method="POST">
+                    <div class="form-group">
+                        <label for="username">Nom d'utilisateur</label>
+                        <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="_password" class="form-control"/>
+                    </div>
+                
+                    <button type="submit" class="btn btn-fonce waves-effect waves-light">Se connecter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}
